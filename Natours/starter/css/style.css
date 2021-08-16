@@ -25,14 +25,19 @@ Dark green: #28b485
     box-sizing: border-box;
 }
 
+/* root element: 用10px 是因为10是整数 比较好计算*/
+html {
+    font-size: 10px;
+}
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 16px; */
     line-height: 1.7;
     color: #777;
     /* padding不会被继承，只是给body加一个padding */
-    padding: 30px;
+    padding: 3rem;
 
 }
 
@@ -58,15 +63,15 @@ body {
 .logo-box {
     /* absolute 的参考系是有position 为relative 的parent:header */
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 
 
 .logo {
     /* 一般只规定image 的height， browser 会自动计算width */
-    height: 35px;
+    height: 3.5rem;
 }
 
 /* .logo:hover {
@@ -91,16 +96,16 @@ body {
     /* 防止animationshake， 在他内部的element animate 时，隐藏本身 */
     backface-visibility: hidden;
 
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 
 /* <span> element is in-line by default; block element occupy the entire width that they have available within the box; create line break after and before them */
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 500;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft;
     animation-duration: 3s;
@@ -111,9 +116,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     animation-name: moveInRight;
     animation-duration: 3s;
@@ -125,11 +130,11 @@ body {
     0% {
         /* 一开始不可见 fade in */
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateX(-10rem);
     }
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% {
@@ -144,11 +149,11 @@ body {
     0% {
         /* 一开始不可见 fade in */
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100% {
@@ -162,7 +167,7 @@ body {
     0% {
         /* 一开始不可见 fade in */
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
 
@@ -177,10 +182,10 @@ body {
 .btn:visited { 
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     /* 如果想要这个inline block center， 只要在parent：text-box  apply text-align：center */
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
 
     /* add animation (在inital state 这里添加，而不是在hover 或者active 上); 使用one-line 样式定义: 允许什么property 发生 （all 这里指:hover and :active） */
     transition: all .2s;
@@ -191,18 +196,18 @@ body {
 
 .btn:hover {
     /* 让这个element move up */
-    transform: translateY(-3px);
+    transform: translateY(-0.3rem);
     /* offset in x direction；  offset in y direction； blur;  color */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 
 }
 
 /* 点过以后状态就是active */
 .btn:active {
     /* 让这个element move up 1px （相对于inital ：link state） */
-    transform: translateY(-1px);
+    transform: translateY(-.1rem);
     /* 点过以后让button看上去有往下摁的效果 */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 
@@ -220,7 +225,7 @@ body {
      height: 100%;
      width: 100%;
 
-     border-radius: 100px;
+     border-radius: 10rem;
 
      /* 想把这个：after 样式的button放在原button的正背面; absolute会找到一个最近的parent 有relative 作为reference（btn）*/
      position: absolute;
