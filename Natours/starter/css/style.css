@@ -26,8 +26,11 @@ Dark green: #28b485
 }
 
 /* root element: 用10px 是因为10是整数 比较好计算*/
+/* root element 的font size 用 px 不好，因为如果用户在browser setting 里改了font size/zoom, 我们的page 字体不会自适应*/
+/* 所以root element font size 要用 %， 这样可以对用browser default value*/
+/* browser 默认 16 px， 这里我们想要10px，所以用62.5%*/
 html {
-    font-size: 10px;
+    font-size: 62.5%;
 }
 
 body {
