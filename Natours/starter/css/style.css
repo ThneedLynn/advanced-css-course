@@ -18,14 +18,19 @@ Dark green: #28b485
 
 */
 
-* {
+/* 也顺便 reset 一下 before 和 after*/
+
+*,
+*::after,
+*::before{
     margin: 0;
     padding: 0;
 
-    box-sizing: border-box;
+    /* box-sizing 默认不会被继承，这里把它设置成可继承的 */
+    box-sizing: inherit;
 }
 
-/* root element: 用10px 是因为10是整数 比较好计算*/
+/* root element: 用10px 是因为10是整数 比较好计算 --> rem 不支持 IE 8-*/
 /* root element 的font size 用 px 不好，因为如果用户在browser setting 里改了font size/zoom, 我们的page 字体不会自适应*/
 /* 所以root element font size 要用 %， 这样可以对用browser default value*/
 /* browser 默认 16 px， 这里我们想要10px，所以用62.5%*/
@@ -41,6 +46,9 @@ body {
     color: #777;
     /* padding不会被继承，只是给body加一个padding */
     padding: 3rem;
+
+    /* box-sizing 默认不会被继承，但是我们在univeral selector * 里把它设置成可继承的 */
+    box-sizing: border-box;
 
 }
 
